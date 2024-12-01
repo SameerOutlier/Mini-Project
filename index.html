@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <!-- Add the path to your logo image here -->
+        <img src="https://www.kindpng.com/picc/m/464-4645124_kiet-group-of-institutions-logo-hd-png-download.png" alt="Quiz Logo" id="quiz-logo">
+        <h1>Interactive Quiz</h1>
+        <div id="name-container">
+            <label for="name-input">Enter your name:</label>
+            <input type="text" id="name-input" placeholder="Your name">
+            <button id="name-submit" class="btn" onclick="submitName()">Submit</button>
+        </div>
+        <div id="settings-container" class="hide">
+            <div class="section">
+                <label for="subject-select">Choose a subject:</label>
+                <select id="subject-select">
+                    <option value="9">General Knowledge</option>
+                    <option value="18">Computer Science</option>
+                    <option value="19">C Programming</option>
+                    <option value="31">AI and ML</option>
+                    <option value="30">Physics of Semiconductors</option>
+                </select>
+            </div>
+            <div class="section">
+                <label for="question-count">Number of questions:</label>
+                <input type="number" id="question-count" min="1" max="50" value="10">
+            </div>
+            <button id="start-button" class="btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+        <div id="question-container" class="hide">
+            <h2 id="question">Question will appear here</h2>
+            <div id="timer">Time left: <span id="time-left">30</span> seconds</div>
+            <div id="answer-buttons" class="btn-container">
+                <!-- Answer buttons will be generated here -->
+            </div>
+        </div>
+        <button id="next-button" class="btn hide" onclick="nextQuestion()">Next Question</button>
+        <div id="result-container" class="hide">
+            <h2 id="result"></h2>
+            <button class="btn" onclick="restartQuiz()">Restart Quiz</button>
+            <button class="btn" onclick="generateCertificate()">Generate Certificate</button>
+            <div id="certificate-container" class="hide">
+                <h2>Certificate of Completion</h2>
+                <div id="certificate-text"></div>
+                <button class="btn" onclick="printCertificate()">Print Certificate</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
